@@ -189,7 +189,7 @@ export function ProductCarousel() {
                 key={i}
                 onClick={() => setCurrentIndex(i)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  i === currentIndex ? "bg-gray-800 w-8" : "bg-gray-300"
+                  i === currentIndex ? "bg-primary w-8" : "bg-[#C9BDBF]"
                 }`}
               />
             )

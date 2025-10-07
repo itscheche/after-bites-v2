@@ -106,7 +106,7 @@ export function HeroSection() {
                   </button>
 
                   <button className="group flex items-center gap-3 text-gray-600 hover:text-gray-800 transition-colors">
-                    <div className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-gray-800 transition-colors">
+                    <div className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-[var(--color-primary)] transition-colors">
                       <Play className="w-4 h-4 ml-1" />
                     </div>
                     Watch Story
@@ -124,7 +124,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 {/* Featured product wireframe */}
-                <div className="bg-white border-2 border-dashed border-gray-300 aspect-square">
+                <div className="bg-white border-2 border-dashed border-[#C9BDBF] aspect-square">
                   <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col">
                     <div className="w-full h-full overflow-hidden p-6">
                       <img

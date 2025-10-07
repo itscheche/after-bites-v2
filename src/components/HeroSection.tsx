@@ -1,5 +1,5 @@
-import { motion } from 'motion/react';
-import { ArrowRight, Play } from 'lucide-react';
+import { motion } from "motion/react";
+import { ArrowRight, Image, Play } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -9,12 +9,23 @@ export function HeroSection() {
         <svg className="w-full h-full" viewBox="0 0 1200 800">
           {/* Grid lines */}
           <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e7eb" strokeWidth="0.5" opacity="0.3"/>
+            <pattern
+              id="grid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="#e5e7eb"
+                strokeWidth="0.5"
+                opacity="0.3"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
-          
+
           {/* Animated dashed lines */}
           <motion.path
             d="M 0 200 Q 300 100 600 200 T 1200 200"
@@ -26,7 +37,7 @@ export function HeroSection() {
             animate={{ pathLength: 1, opacity: 0.6 }}
             transition={{ duration: 3, ease: "easeInOut" }}
           />
-          
+
           <motion.path
             d="M 200 0 Q 400 300 600 400 T 1000 600"
             fill="none"
@@ -44,7 +55,6 @@ export function HeroSection() {
       <div className="relative z-10 pt-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-12 gap-6 min-h-[80vh] items-center">
-            
             {/* Left column - offset */}
             <div className="col-span-7 col-start-2">
               <motion.div
@@ -54,11 +64,11 @@ export function HeroSection() {
                 className="space-y-8"
               >
                 <div className="relative">
-                  <h1 className="text-6xl leading-tight tracking-tight">
+                  <h1 className="text-6xl leading-tight tracking-tight text-primary">
                     <span className="block">Artisanal</span>
                     <span className="block text-gray-500">Confections</span>
-                    <motion.span 
-                      className="block text-gray-800"
+                    <motion.span
+                      className="block"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1.2 }}
@@ -66,27 +76,28 @@ export function HeroSection() {
                       Reimagined
                     </motion.span>
                   </h1>
-                  
+
                   {/* Wireframe accent */}
                   <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-transparent via-gray-400 to-transparent opacity-30" />
                 </div>
 
-                <motion.p 
+                <motion.p
                   className="text-lg text-gray-600 max-w-md leading-relaxed"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.8 }}
                 >
-                  Discover our curated collection of premium treats that blur the line between dessert and art.
+                  Discover our curated collection of premium treats that blur
+                  the line between dessert and art.
                 </motion.p>
 
-                <motion.div 
+                <motion.div
                   className="flex items-center gap-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 }}
                 >
-                  <button className="group relative px-8 py-3 border-2 border-gray-800 bg-gray-800 text-white hover:bg-transparent hover:text-gray-800 transition-all duration-300 overflow-hidden">
+                  <button className="group relative px-8 py-3 border-2 border-secondary bg-secondary text-white hover:bg-primary hover:text-[var(--color-primary)] transition-all duration-300 overflow-hidden">
                     <span className="relative z-10 flex items-center gap-2">
                       Explore Collection
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -113,20 +124,21 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 {/* Featured product wireframe */}
-                <div className="bg-white border-2 border-dashed border-gray-300 p-6 aspect-square">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                      <div className="w-16 h-16 mx-auto border-2 border-gray-400 rounded-full flex items-center justify-center">
-                        <div className="w-8 h-8 bg-gray-400 rounded-full" />
-                      </div>
-                      <p className="text-sm text-gray-500">Featured Product</p>
+                <div className="bg-white border-2 border-dashed border-gray-300 aspect-square">
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col">
+                    <div className="w-full h-full overflow-hidden p-6">
+                      <img
+                        src="/assets/image1.jpg"
+                        alt="mini tart"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Stats overlay */}
                 <motion.div
-                  className="absolute -bottom-4 -right-4 bg-gray-800 text-white p-4 text-sm"
+                  className="absolute -bottom-4 -right-4 bg-secondary text-white p-4 text-sm"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 1.4, type: "spring" }}
@@ -139,7 +151,7 @@ export function HeroSection() {
               {/* Secondary info blocks */}
               <div className="grid grid-cols-2 gap-4">
                 <motion.div
-                  className="bg-gray-800 text-white p-4 aspect-square flex flex-col justify-between"
+                  className="bg-secondary text-white p-4 aspect-square flex flex-col justify-between"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.6 }}
@@ -147,7 +159,7 @@ export function HeroSection() {
                   <div className="text-2xl">47</div>
                   <div className="text-xs text-gray-400">Unique Flavors</div>
                 </motion.div>
-                
+
                 <motion.div
                   className="border border-gray-300 p-4 aspect-square flex flex-col justify-between"
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -175,7 +187,9 @@ export function HeroSection() {
           animate={{ scaleY: [1, 0.5, 1] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
-        <p className="text-xs text-gray-500 text-center tracking-wider">SCROLL</p>
+        <p className="text-xs text-gray-500 text-center tracking-wider">
+          SCROLL
+        </p>
       </motion.div>
     </section>
   );

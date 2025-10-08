@@ -116,15 +116,15 @@ export function HeroSection() {
             </div>
 
             {/* Right column - modular blocks */}
-            <div className="col-span-4 space-y-4">
+            <div className="col-span-12 md:col-span-4 space-y-4 order-1 md:order-none">
               <motion.div
-                className="relative"
+                className="relative max-w-sm mx-auto md:max-w-none md:mx-0"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 {/* Featured product wireframe */}
-                <div className="bg-white border-2 border-dashed border-[#C9BDBF] aspect-square">
+                <div className="bg-white border-2 border-dashed border-[#C9BDBF] aspect-square hidden md:block">
                   <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col">
                     <div className="w-full h-full overflow-hidden p-6">
                       <img
@@ -149,14 +149,15 @@ export function HeroSection() {
               </motion.div>
 
               {/* Secondary info blocks */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto md:max-w-none md:mx-0">
                 <motion.div
                   className="bg-secondary text-white p-4 aspect-square flex flex-col justify-between"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.6 }}
                 >
-                  <div className="text-2xl">47</div>
+                  {/* Reduced text size on mobile for better fit */}
+                  <div className="text-2xl sm:text-xl">47</div>
                   <div className="text-xs text-gray-400">Unique Flavors</div>
                 </motion.div>
 
@@ -166,8 +167,14 @@ export function HeroSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.8 }}
                 >
-                  <div className="text-2xl text-gray-800">24h</div>
-                  <div className="text-xs text-gray-500">Fresh Daily</div>
+                  {/* Reduced text size on mobile for better fit */}
+                  <div className="text-2xl sm:text-xl text-gray-800">24h</div>
+                  <div className="text-xs text-gray-500">
+                    Fresh{" "}
+                    <span className="sm:inline-block md:block lg:inline-block inline-block">
+                      Daily
+                    </span>
+                  </div>
                 </motion.div>
               </div>
             </div>
